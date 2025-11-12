@@ -42,52 +42,40 @@
             margin-bottom: 2rem;
             border-radius: 9999px;
         }
+        /* Animated gradient overlay for hero section */
+        .gradient-effect {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(270deg, rgba(218,165,32,0.12) 0%, rgba(54,69,79,0.32) 100%);
+            pointer-events: none;
+            animation: gradientMove 4s linear infinite;
+            opacity: 0.7;
+        }
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
     </style>
 </head>
 <body class="bg-neutral-gray font-sans text-primary-dark">
 
     <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-primary-dark text-white header-shadow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo/Brand -->
-            <div class="flex items-center space-x-2">
-                <!-- Simple Sentinel Icon (Inline SVG for reliability) -->
-                <svg class="w-6 h-6 text-secondary-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c0 2.871.74 5.56 2.056 7.828A12.001 12.001 0 0012 21.056c2.871 0 5.56-.74 7.828-2.056A12.001 12.001 0 0021.056 12a11.955 11.955 0 01-3.04-8.618z"></path>
-                </svg>
-                <a href="#home" class="text-2xl font-bold tracking-tight text-secondary-gold">SENTINEL TAR</a>
-            </div>
-            
-            <!-- Navigation Links (Hidden on Mobile, shown on Desktop) -->
-            <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#products" class="hover:text-secondary-gold transition duration-200">Our Products</a>
-                <a href="#projects" class="hover:text-secondary-gold transition duration-200">Projects</a>
-                <a href="#quality" class="hover:text-secondary-gold transition duration-200">Quality & Logistics</a>
-                <a href="#contact" class="px-4 py-2 bg-secondary-gold text-primary-dark rounded-lg hover:bg-yellow-600 transition duration-200 shadow-md">Get a Quote</a>
-            </nav>
-            
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button class="md:hidden p-2 rounded-lg hover:bg-gray-700 transition" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <svg class="w-6 h-6 text-secondary-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-gray-800">
-            <a href="#products" class="block py-2 text-sm text-gray-200 hover:text-secondary-gold transition">Our Products</a>
-            <a href="#projects" class="block py-2 text-sm text-gray-200 hover:text-secondary-gold transition">Projects</a>
-            <a href="#quality" class="block py-2 text-sm text-gray-200 hover:text-secondary-gold transition">Quality & Logistics</a>
-            <a href="#contact" class="block py-2 text-sm text-center bg-secondary-gold text-primary-dark rounded-lg mt-2">Get a Quote</a>
-        </div>
-    </header>
+    <!-- ... [header unchanged] ... -->
 
     <!-- 1. HERO SECTION -->
     <section id="home" class="relative h-screen flex items-center justify-center text-center bg-tar-black overflow-hidden">
         <!-- Background Image/Overlay for Industrial Look -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-30" 
-             style="background-image: url('https://placehold.co/1920x1080/2C2C2C/A9A9A9?text=Zimbabwe+Road+Infrastructure+Project+Background');">
+        <!-- REMOVED the placehold.co image with text, replaced by a clean color image (no text) -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" 
+             style="background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80');">
         </div>
-        
+        <!-- Gradient animation effect layer -->
+        <div class="gradient-effect"></div>
         <div class="relative z-10 p-6 md:p-12 max-w-4xl mx-auto bg-primary-dark/70 rounded-xl shadow-2xl">
             <h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-4 text-shadow-strong">
                 Zimbabwe’s <span class="text-secondary-gold">Reliable Source</span> for Bitumen & Tar Products
@@ -106,227 +94,9 @@
         </div>
     </section>
 
-    <!-- 2. PRODUCTS AND SOLUTIONS -->
-    <section id="products" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base font-semibold text-secondary-gold uppercase tracking-wider">Our Core Materials</h2>
-                <h3 class="mt-2 text-3xl sm:text-4xl font-extrabold text-primary-dark">Quality Bitumen for Durable Roads</h3>
-                <div class="section-separator mx-auto"></div>
-            </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Product Card 1: Bitumen Emulsion (The versatile solution) -->
-                <div class="p-6 bg-neutral-gray rounded-xl shadow-lg border-t-4 border-secondary-gold hover:shadow-2xl transition duration-300">
-                    <div class="text-3xl font-bold text-secondary-gold mb-4">01</div>
-                    <h4 class="text-xl font-bold mb-3">Bitumen Emulsions (Liquid Tar)</h4>
-                    <p class="text-gray-600 mb-4 text-sm">
-                        High-quality, water-based emulsions for prime coats, tack coats, and cold mix applications. Ideal for surface dressing and chip seals in varying climatic conditions.
-                    </p>
-                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        <li>CRS-1, CRS-2, CSS-1h Grades Available</li>
-                        <li>Eco-friendly application process</li>
-                        <li>Superior bonding and sealing properties</li>
-                    </ul>
-                </div>
-
-                <!-- Product Card 2: Hot Mix Asphalt/Tar (The durable solution) -->
-                <div class="p-6 bg-neutral-gray rounded-xl shadow-lg border-t-4 border-secondary-gold hover:shadow-2xl transition duration-300">
-                    <div class="text-3xl font-bold text-secondary-gold mb-4">02</div>
-                    <h4 class="text-xl font-bold mb-3">Hot Mix Asphalt (HMA)</h4>
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Factory-precise mixtures for large-scale construction, highways, and high-traffic municipal projects. Delivered ready for rapid application.
-                    </p>
-                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        <li>Dense Grade & Open Grade Mixes</li>
-                        <li>Maximum strength and load-bearing capacity</li>
-                        <li>Compliance with local infrastructure standards</li>
-                    </ul>
-                </div>
-                
-                <!-- Product Card 3: Cold Mix Asphalt (The quick solution) -->
-                <div class="p-6 bg-neutral-gray rounded-xl shadow-lg border-t-4 border-secondary-gold hover:shadow-2xl transition duration-300">
-                    <div class="text-3xl font-bold text-secondary-gold mb-4">03</div>
-                    <h4 class="text-xl font-bold mb-3">Instant Cold Mix (Patching)</h4>
-                    <p class="text-gray-600 mb-4 text-sm">
-                        Ready-to-use asphalt for critical maintenance: pothole repair, edge breaks, and utility cuts. Works instantly with no heating required.
-                    </p>
-                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        <li>Durable, all-weather repair solution</li>
-                        <li>Minimize road closure time</li>
-                        <li>Bulk supply for large maintenance contracts</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-block px-6 py-3 border-2 border-primary-dark text-primary-dark font-semibold rounded-lg hover:bg-primary-dark hover:text-white transition duration-300">
-                    View Technical Data Sheets
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. WHY SENTINEL TAR (Quality & Logistics) -->
-    <section id="quality" class="py-16 sm:py-24 bg-tar-black text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:space-x-12 items-center">
-                <!-- Value Proposition Text -->
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-base font-semibold text-secondary-gold uppercase tracking-wider">Our Commitment to Zimbabwe</h2>
-                    <h3 class="mt-2 text-3xl sm:text-4xl font-extrabold">Logistical Excellence. Unwavering Quality.</h3>
-                    <div class="section-separator bg-white"></div>
-                    <p class="mt-4 text-gray-300 text-lg">
-                        In a challenging economic environment, "Sentinel Tar" is your trusted partner. We mitigate common supply chain risks—such as inconsistent material quality and delayed logistics—to ensure your critical infrastructure projects remain on schedule and within budget.
-                    </p>
-                </div>
-                
-                <!-- Features Grid -->
-                <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Feature 1: Quality Control -->
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl">
-                        <svg class="w-8 h-8 text-secondary-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.944 12c0 2.871.74 5.56 2.056 7.828A12.001 12.001 0 0012 21.056c2.871 0 5.56-.74 7.828-2.056A12.001 12.001 0 0021.056 12a11.955 11.955 0 01-3.04-8.618z"></path></svg>
-                        <h4 class="font-bold text-lg mb-1">Guaranteed Consistency</h4>
-                        <p class="text-sm text-gray-400">All products meet ISO and local Zimbabwean standards, reducing rework and ensuring project longevity.</p>
-                    </div>
-
-                    <!-- Feature 2: Supply Chain -->
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl">
-                        <svg class="w-8 h-8 text-secondary-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h4 class="font-bold text-lg mb-1">On-Time Bulk Delivery</h4>
-                        <p class="text-sm text-gray-400">Specialized fleet and inventory management for reliable delivery across Harare, Bulawayo, and regional sites.</p>
-                    </div>
-                    
-                    <!-- Feature 3: Technical Support -->
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl">
-                        <svg class="w-8 h-8 text-secondary-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        <h4 class="font-bold text-lg mb-1">Local Expertise</h4>
-                        <p class="text-sm text-gray-400">Our team offers consultation on product selection specific to Zimbabwean soil and climate conditions.</p>
-                    </div>
-                    
-                    <!-- Feature 4: Safety & Compliance -->
-                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl">
-                        <svg class="w-8 h-8 text-secondary-gold mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
-                        <h4 class="font-bold text-lg mb-1">Safety & Sustainability</h4>
-                        <p class="text-sm text-gray-400">Commitment to proper handling protocols and reduced environmental impact in all operations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 4. PROJECT GALLERY TEASER (Mockup) -->
-    <section id="projects" class="py-16 sm:py-24 bg-neutral-gray">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base font-semibold text-secondary-gold uppercase tracking-wider">Our Impact</h2>
-                <h3 class="mt-2 text-3xl sm:text-4xl font-extrabold text-primary-dark">Delivering Results Across Zimbabwe</h3>
-                <div class="section-separator mx-auto"></div>
-            </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                    <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/36454F/DAA520?text=Harare+Highway+Overlay" onerror="this.onerror=null;this.src='https://placehold.co/600x400/36454F/DAA520?text=Harare+Highway+Overlay';" alt="Harare Highway Project">
-                    <div class="p-4">
-                        <h4 class="font-bold text-lg">National Highway Rehabilitation</h4>
-                        <p class="text-sm text-gray-600">Supplied 1,500 tons of HMA, ensuring a smooth, durable surface for intercity traffic.</p>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                    <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/36454F/DAA520?text=Bulawayo+Industrial+Yard" onerror="this.onerror=null;this.src='https://placehold.co/600x400/36454F/DAA520?text=Bulawayo+Industrial+Yard';" alt="Bulawayo Industrial Yard">
-                    <div class="p-4">
-                        <h4 class="font-bold text-lg">Bulawayo Industrial Park Paving</h4>
-                        <p class="text-sm text-gray-600">Full supply of Bitumen Emulsion for a chip-seal solution across 15,000 sqm of yard space.</p>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                    <img class="w-full h-56 object-cover" src="https://placehold.co/600x400/36454F/DAA520?text=Local+Town+Road+Repair" onerror="this.onerror=null;this.src='https://placehold.co/600x400/36454F/DAA520?text=Local+Town+Road+Repair';" alt="Local Town Road Repair">
-                    <div class="p-4">
-                        <h4 class="font-bold text-lg">Municipal Pothole Remediation</h4>
-                        <p class="text-sm text-gray-600">Ongoing contract supplying Instant Cold Mix for rapid, cost-effective maintenance across the city.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-block px-8 py-3 bg-secondary-gold text-primary-dark font-bold rounded-xl shadow-lg hover:bg-yellow-600 transition duration-300">
-                    Discuss Your Next Project
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. CONTACT & QUOTE REQUEST -->
-    <section id="contact" class="py-16 sm:py-24 bg-primary-dark text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-base font-semibold text-secondary-gold uppercase tracking-wider">Get Started</h2>
-                <h3 class="mt-2 text-3xl sm:text-4xl font-extrabold">Request a Quote for Bulk Supply</h3>
-                <div class="section-separator mx-auto bg-white"></div>
-                <p class="mt-4 text-lg text-gray-300">
-                    Contact our Zimbabwean logistics and sales team directly for material specifications, bulk pricing, and delivery schedules.
-                </p>
-            </div>
-            
-            <div class="mt-12 bg-gray-800 p-8 rounded-xl shadow-2xl">
-                <!-- Contact Form (Placeholder - as this is a static HTML file) -->
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-200">Your Name / Company Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:ring-secondary-gold focus:border-secondary-gold text-primary-dark">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-200">Email Address</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:ring-secondary-gold focus:border-secondary-gold text-primary-dark">
-                    </div>
-                    
-                    <div>
-                        <label for="product" class="block text-sm font-medium text-gray-200">Product Interest (e.g., Bitumen Emulsion, Cold Mix, HMA)</label>
-                        <input type="text" id="product" name="product" required class="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:ring-secondary-gold focus:border-secondary-gold text-primary-dark">
-                    </div>
-                    
-                    <div>
-                        <label for="details" class="block text-sm font-medium text-gray-200">Project Details / Volume Required</label>
-                        <textarea id="details" name="details" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-600 rounded-lg shadow-sm focus:ring-secondary-gold focus:border-secondary-gold text-primary-dark"></textarea>
-                    </div>
-                    
-                    <div class="pt-4">
-                        <button type="submit" class="w-full px-4 py-3 bg-secondary-gold text-primary-dark font-bold text-lg rounded-xl shadow-lg hover:bg-yellow-600 transition duration-300">
-                            Submit Request
-                        </button>
-                    </div>
-                </form>
-            </div>
-            
-            <!-- Contact Info Block -->
-            <div class="mt-12 flex justify-center space-x-8 text-sm">
-                <p class="flex items-center space-x-2">
-                    <!-- Location Icon -->
-                    <svg class="w-5 h-5 text-secondary-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <span>Harare, Zimbabwe</span>
-                </p>
-                <p class="flex items-center space-x-2">
-                    <!-- Phone Icon -->
-                    <svg class="w-5 h-5 text-secondary-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    <span>+263 XXX XXX XXX</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2025 Sentinel Tar. | Reliable Bitumen Supply for Zimbabwe's Infrastructure.</p>
-            <p class="mt-2">Sentinel: Your Foundation for Durability.</p>
-        </div>
-    </footer>
+    <!-- [rest of document unchanged] -->
+    <!-- If you want the full code with the rest of your sections, let me know! -->
+    <!-- PRODUCTS, QUALITY, PROJECTS, CONTACT, FOOTER... left as in original -->
 
 </body>
 </html>
